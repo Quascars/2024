@@ -34,7 +34,16 @@ function getVotes() {
     const votesRef = ref(database, 'votes');
     onValue(votesRef, (snapshot) => {
         const votes = snapshot.val();
-        console.log('Current votes:', votes);
+        const voteDisplay = document.getElementById('voteDisplay');
+        
+        // Clear the previous content
+        voteDisplay.innerHTML = '';
+
+        // Display the vote counts dynamically
+        for (let option in votes) {
+            const count = votes[option].count || 0;
+            voteDisplay.innerHTML += `<p>${option}: ${count} votes</p>`;
+        }
     }, (error) => {
         console.error('Error reading votes:', error);
     });
