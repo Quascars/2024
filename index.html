@@ -68,6 +68,31 @@
             console.error('Error reading votes:', error);
           });
         };
+
+        // Function to get the most voted option
+        window.getMostVotedOption = function() {
+            const votesRef = ref(database, 'votes');
+            onValue(votesRef, (snapshot) => {
+                const votes = snapshot.val();
+                let mostVotedOption = '';
+                let highestVoteCount = 0;
+
+                // Loop through the votes to find the most voted option
+                for (let option in votes) {
+                    const count = votes[option].count || 0;
+                    if (count > highestVoteCount) {
+                        mostVotedOption = option;
+                        highestVoteCount = count;
+                    }
+                }
+
+                // Display the most voted option
+                const mostVotedOptionDisplay = document.getElementById('mostVotedOptionDisplay');
+                mostVotedOptionDisplay.innerHTML = `Most Voted Option: ${mostVotedOption} with ${highestVoteCount} votes`;
+            }, (error) => {
+                console.error('Error reading votes:', error);
+            });
+        };
     </script>
 </body>
 </html>
