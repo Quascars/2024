@@ -6,7 +6,7 @@
     <title>Quascars</title>
 </head>
 <body>
-    <h1>Vote for Your Favorite Option 1</h1>
+    <h1>Vote for Your Favorite Option 2</h1>
     <button onclick="vote('Option1')">Option 1</button>
     <button onclick="vote('Option2')">Option 2</button>
     <button onclick="vote('Option3')">Option 3</button>
@@ -20,7 +20,7 @@
         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js";
         import { getDatabase, ref, set, update, increment, onValue } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-database.js";
   
-        // Your Firebase configuration object
+        // Firebase configuration
         const firebaseConfig = {
           apiKey: "AIzaSyDwMFPvf5Hr3ASjcsii5bWpJNFBaRG0YQ0",
           authDomain: "quascars-2024.firebaseapp.com",
@@ -35,18 +35,17 @@
         const app = initializeApp(firebaseConfig);
         const database = getDatabase(app);
   
-        // Voting function
-        function vote(option) {
+        // Define the functions in the global scope
+        window.vote = function(option) {
           const votesRef = ref(database, 'votes/' + option);
           update(votesRef, { count: increment(1) }).then(() => {
             console.log(`Vote registered for ${option}`);
           }).catch(error => {
             console.error('Error updating vote:', error);
           });
-        }
+        };
   
-        // Fetch and display votes
-        function getVotes() {
+        window.getVotes = function() {
           const votesRef = ref(database, 'votes');
           onValue(votesRef, (snapshot) => {
             const votes = snapshot.val();
@@ -63,7 +62,7 @@
           }, (error) => {
             console.error('Error reading votes:', error);
           });
-        }
+        };
     </script>
 </body>
 </html>
