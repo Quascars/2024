@@ -4,33 +4,120 @@
             <link rel="stylesheet" href="style.css">
             <meta charset="utf-8">
             <meta name="viewport" content="width=device-width, initial-scale=0.5">
-            <title>Math Mastery</title>
+            <title>Quascars</title>
         </head>
 
         <body>
             <main id="content">
                 <div class="header">
-                    <h1> HomePage V1 </h1>
+                    <h1> Quascars 2024 V2 </h1>
                 </div>
                 
                 <div class="heading" >
                 </div>
           
                 <div class="stuff">
-                  <div class="tooltip"> <g>?<g> <span class="tooltiptext">This is the HomePage of the Math Mastery Website. The Homepage is the hub of Math Mastery allowing you to access any other place in the website from this page.</span></div>
                   <div class="item">
-                    <h2>Welcome to Math Mastery where students unlock their potential with our engaging math curriculum and resources designed to challenge and inspire</h2>
+                    <button onclick="vote('Kingplazmer')">Kingplazmer</button>
+                    <button onclick="vote('Crystaltanks')">Crystaltanks</button>
+                    <button onclick="vote('Muka')">Muka</button>
+                    <button onclick="vote('Grim')">Grim</button>
+                    <button onclick="vote('Mapleleaf')">Mapleleaf</button>
+                    <button onclick="vote('Trizule')">Trizule</button>
+                    <button onclick="vote('Youngyos')">youngyos</button>
+                    <button onclick="vote('Random Guy')">Random Guy</button>
+                    <button onclick="getVotes()">Get Current Votes</button>
+                    <button onclick="getMostVotedOption()">Get Most Voted Option</button>
+                    <div id="voteDisplay">
+                        <!-- The vote counts will be displayed here -->
+                    </div>
+                    <div id="mostVotedOptionDisplay">
+                        <!-- The most voted option will be displayed here -->
+                    </div>
                   </div>
                   <div class="item">
-                    <h2>Explore a wide range of topics from algebra and calculus to statistics and beyond, preparing you for success in college and beyond</h2>
+                    <h2></h2>
                   </div>
                   <div class="item">
-                    <h2>Prepare for the future with critical thinking skills, problem-solving abilities, and a deep understanding of mathematical concepts</h2>
+                    <h2></h2>
                   </div>
                   <div class="item">
-                    <h2>Start your journey towards mathematical mastery today with our dynamic and innovative math education program</h2>
+                    <h2></h2>
                   </div>
                 </div>
+                <script type="module">
+                    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js";
+                    import { getDatabase, ref, set, update, increment, onValue } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-database.js";
+              
+                    // Firebase configuration
+                    const firebaseConfig = {
+                      apiKey: "AIzaSyDwMFPvf5Hr3ASjcsii5bWpJNFBaRG0YQ0",
+                      authDomain: "quascars-2024.firebaseapp.com",
+                      projectId: "quascars-2024",
+                      storageBucket: "quascars-2024.firebasestorage.app",
+                      messagingSenderId: "497636253553",
+                      appId: "1:497636253553:web:c0d26aed52c019e1ece0d0",
+                      measurementId: "G-ES41X1FD3W"
+                    };
+              
+                    // Initialize Firebase
+                    const app = initializeApp(firebaseConfig);
+                    const database = getDatabase(app);
+              
+                    // Define the functions in the global scope
+                    window.vote = function(option) {
+                      const votesRef = ref(database, 'votes/' + option);
+                      update(votesRef, { count: increment(1) }).then(() => {
+                        console.log(`Vote registered for ${option}`);
+                      }).catch(error => {
+                        console.error('Error updating vote:', error);
+                      });
+                    };
+              
+                    window.getVotes = function() {
+                      const votesRef = ref(database, 'votes');
+                      onValue(votesRef, (snapshot) => {
+                        const votes = snapshot.val();
+                        const voteDisplay = document.getElementById('voteDisplay');
+                        
+                        // Clear the previous content
+                        voteDisplay.innerHTML = '';
+              
+                        // Display the vote counts dynamically
+                        for (let option in votes) {
+                          const count = votes[option].count || 0;
+                          voteDisplay.innerHTML += `<p>${option}: ${count} votes</p>`;
+                        }
+                      }, (error) => {
+                        console.error('Error reading votes:', error);
+                      });
+                    };
+            
+                    // Function to get the most voted option
+                    window.getMostVotedOption = function() {
+                        const votesRef = ref(database, 'votes');
+                        onValue(votesRef, (snapshot) => {
+                            const votes = snapshot.val();
+                            let mostVotedOption = '';
+                            let highestVoteCount = 0;
+            
+                            // Loop through the votes to find the most voted option
+                            for (let option in votes) {
+                                const count = votes[option].count || 0;
+                                if (count > highestVoteCount) {
+                                    mostVotedOption = option;
+                                    highestVoteCount = count;
+                                }
+                            }
+            
+                            // Display the most voted option
+                            const mostVotedOptionDisplay = document.getElementById('mostVotedOptionDisplay');
+                            mostVotedOptionDisplay.innerHTML = `Most Voted Option: ${mostVotedOption} with ${highestVoteCount} votes`;
+                        }, (error) => {
+                            console.error('Error reading votes:', error);
+                        });
+                    };
+                </script>
             </main>
         </body>
     </html>
