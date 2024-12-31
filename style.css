@@ -127,7 +127,7 @@ button {
   cursor: pointer;
   border-radius: 10px;
   border-width: 1.5px;
-  margin-left: 120px;
+  margin-left: 120px !important;
 }
 
 button:hover {
