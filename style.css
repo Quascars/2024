@@ -1,0 +1,432 @@
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border: 1px solid black; 
+    width: 45px;
+    height: 45px;
+    background-color: white;
+    color: black;
+    text-align: center;
+    border-radius: 100px;
+    margin-left: 0px; 
+    overflow: visible;
+  }
+
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 300px;
+  background-color: #6e6e6e;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+.tooltip g {
+  font-size: 25px;
+}
+
+.dark-mode {
+  background-color: rgb(30, 30, 30);
+}
+
+.dark-mode h2,
+.dark-mode li {
+    color: rgb(212, 212, 212);  
+}
+
+.dark-mode h1 {
+  color: rgb(120, 120, 120);   
+}
+
+.light-mode {
+  background-color: white;
+}
+
+.light-mode h2,
+.light-mode li {
+    color: rgb(43, 43, 43); 
+}
+
+.light-mode h1 {
+  color: rgb(110, 110, 110);; 
+}
+
+
+* {
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+nav a {
+  color: rgb(43, 43, 43);
+}
+
+nav{
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 20%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  list-style-type: none;
+  background-color: rgb(101, 158, 205);
+  overflow-x: hidden;
+	transition: 0.5s;
+  padding-top: 60px;
+  }
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 55px;
+  margin-left: 50px;
+}
+
+#open{
+  visibility: hidden;
+  font-size:35px;
+  cursor: pointer;
+  color: rgb(43, 43, 43);
+}
+
+main{
+  padding: 0px;
+}
+
+#content {
+  margin-left: 20%;
+  transition: 0.5s;
+}
+
+body {
+  margin: 0;
+}
+
+main h1 {
+  padding-left: 80px;
+  padding-right: 80px;
+  font-family: 'Font Awesome 5 Free';
+  color: rgb(110, 110, 110);
+}
+
+main p {
+  padding-left: 80px;
+  padding-right: 80px;
+  font-family: 'Font Awesome 5 Free';
+  color: rgb(110, 110, 110);
+}
+
+main h2 {
+  padding-left: 80px;
+  padding-right: 30px;
+  font-family: 'Font Awesome 5 Free';
+  font-size: 32px;
+  font-weight:initial;
+  color: rgb(43, 43, 43);
+}
+
+h1 {
+  font-size: 50px;
+}
+
+nav button {
+  color: white;
+  background-color: rgb(101, 158, 205);
+  font-size: 25px;
+  margin: 5px;
+  cursor: pointer;
+  border-width: 3px;
+  padding: 0px 50px;
+  border: none;
+  border-radius: 50px;
+}
+
+nav button:hover {
+  background-color: rgba(77, 128, 170, 0.817);
+}
+
+nav img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px; 
+  height: auto;
+  opacity: 0.75;
+} 
+
+button {
+  background-color: white;
+  font-size: 20px;
+  margin: 25px;
+  margin-left: 75px;
+  cursor: pointer;
+  border-radius: 10px;
+  border-width: 1.5px;
+  padding: 0px;
+}
+
+button:hover {
+  background-color: #e6e6e6;
+}
+
+.submit-button {
+  background: linear-gradient(to bottom, rgb(101, 158, 205) 0%, rgb(90, 142, 184) 100%);
+  border: 1.5px solid transparent;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  padding: 8px 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.submit-button:hover {
+  background: linear-gradient(to bottom, rgb(85, 134, 173) 0%, rgb(90, 142, 184) 100%);
+}
+
+.submit-button:active {
+  background: linear-gradient(to bottom, rgb(74, 116, 150) 0%, rgb(80, 125, 162) 100%);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  transform: translateY(1px);
+}
+
+h2 {
+  font-size: 40px;
+  color: rgb(43, 43, 43);
+}
+
+a {
+  color: rgb(91, 158, 206);
+}
+
+main div {
+  padding: 10px;
+  overflow: hidden;
+}
+
+main span {
+  vertical-align: top;
+  font-family: 'Font Awesome 5 Free';
+  color: rgb(110, 110, 110);
+  margin-top: 0px;
+  margin-right: 80px;
+  display: flex;
+  justify-content: left;
+  font-size: 22px;
+  padding-bottom: 10px;
+}
+
+input {
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 24px;
+}
+
+.message {
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 24px;
+  overflow: hidden;
+}
+
+input:hover {
+  border-color: #aaa;
+}
+
+input:focus {
+  outline: none;
+  border-color: dodgerblue;
+  box-shadow: 0 0 5px rgba(0, 0, 255, 0.5);
+}
+
+input:disabled {
+  background-color: #f2f2f2;
+  color: #999;
+}
+
+.header {
+  background-color: rgb(199, 211, 221);
+  color: #fff;
+  padding: 20px;
+  position: relative;
+  border-bottom-right-radius: 50% 25%;
+  border-bottom-left-radius: 50% 25%;
+  overflow: hidden;
+}
+
+.header h1 {
+  font-size: 70px;
+  text-align: center;
+  margin: 0;
+  padding-bottom: 30px;
+}
+
+.header h2 {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.heading {
+  margin-bottom: 200px;
+}
+
+.heading img{
+  position: absolute;
+  top: 12.5%;
+  left: 0%;
+  width: 100%; 
+  z-index: -1; 
+  height: 250px;
+}
+
+.stuff {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.stuff ul {
+  padding-left: 100px;
+  padding-right: 80px;
+  font-family: 'Font Awesome 5 Free';
+  font-size: 28px;
+  font-weight:initial;
+  color: rgb(43, 43, 43);
+}
+
+.stuff li {
+  padding-bottom: 12px;
+}
+
+.item {
+  flex-basis: calc(110%); 
+  margin-bottom: 20px; 
+  display: flex;
+}
+
+.Img {
+  width: 25%; 
+  height: auto;
+  margin-left: 50px; 
+}
+
+.problem-container {
+  margin-bottom: 20px;
+  margin: 2px auto;
+}
+.problem {
+  margin-bottom: 10px;
+  margin-left: 7.5%;
+}
+
+.answer {
+  margin-left: 7.5%;
+}
+
+.problemButton{
+  padding: 15px 20px;
+  background-color: #5264bc; 
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  margin-left: 25px;
+}
+
+.problemButton:hover {
+  background-color: #4e5eb0; 
+}
+
+.calculator {
+  width: 300px; 
+  margin: 100px auto;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  text-align: center;
+}
+
+#display {
+  margin-bottom: 10px;
+  padding: 0px;
+  font-size: 20px;
+}
+
+.keys {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+}
+
+.calculator button {
+  padding: 10px;
+  font-size: 20px;
+  border: none;
+  background-color: #f0f0f0;
+  cursor: pointer;
+  margin: 0px;
+}
+
+.calculator button:hover {
+  background-color: #ccc;
+}
+
+.hidden-div {
+  display: none;
+  margin-bottom: 20px;
+}
+
+.nested-div {
+  display: none;
+  margin-bottom: 20px;
+}
+
+.show-hide-button {
+  border: none;
+  cursor: pointer;
+  background-color: #fff;
+}
+
+.show-hide-button h2{
+  padding: 5px;
+}
+
+.video-container {
+  position: relative;
+  width: 50%;
+  height: 450px;
+  margin-left: 60px;
+}
+.video-container iframe {
+  width: 100%;
+  height: 100%;
+}
+
+.WorkedImg {
+  width: 50%; 
+  height: auto;
+  margin-left: 70px; 
+}
