@@ -108,6 +108,15 @@ main h2 {
   color: rgb(43, 43, 43);
 }
 
+main h3 {
+    padding-left: 30px;
+    padding-right: 30px;
+    font-family: 'Font Awesome 5 Free';
+    font-size: 24px;
+    font-weight:initial;
+    color: rgb(43, 43, 43);
+  }
+
 h1 {
   font-size: 50px;
 }
