@@ -93,7 +93,6 @@ nav{
   top: 0;
   right: 25px;
   font-size: 55px;
-  margin-left: 50px;
 }
 
 #open{
@@ -131,7 +130,7 @@ main p {
 }
 
 main h2 {
-  padding-left: 80px;
+  padding-left: 30px;
   padding-right: 30px;
   font-family: 'Font Awesome 5 Free';
   font-size: 32px;
@@ -172,7 +171,6 @@ button {
   background-color: white;
   font-size: 20px;
   margin: 25px;
-  margin-left: 75px;
   cursor: pointer;
   border-radius: 10px;
   border-width: 1.5px;
@@ -306,7 +304,7 @@ input:disabled {
 }
 
 .stuff ul {
-  padding-left: 100px;
+  padding-left: 80px;
   padding-right: 80px;
   font-family: 'Font Awesome 5 Free';
   font-size: 28px;
@@ -327,7 +325,6 @@ input:disabled {
 .Img {
   width: 25%; 
   height: auto;
-  margin-left: 50px; 
 }
 
 .problem-container {
@@ -353,7 +350,6 @@ input:disabled {
   display: inline-block;
   font-size: 16px;
   cursor: pointer;
-  margin-left: 25px;
 }
 
 .problemButton:hover {
@@ -418,7 +414,6 @@ input:disabled {
   position: relative;
   width: 50%;
   height: 450px;
-  margin-left: 60px;
 }
 .video-container iframe {
   width: 100%;
@@ -428,5 +423,4 @@ input:disabled {
 .WorkedImg {
   width: 50%; 
   height: auto;
-  margin-left: 70px; 
 }
