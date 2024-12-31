@@ -86,7 +86,7 @@ body {
 }
 
 main h1 {
-  padding-left: 80px;
+  padding-left: 60px;
   padding-right: 80px;
   font-family: 'Font Awesome 5 Free';
   color: rgb(110, 110, 110);
@@ -100,7 +100,7 @@ main p {
 }
 
 main h2 {
-  padding-left: 120px;
+  padding-left: 90px;
   padding-right: 30px;
   font-family: 'Font Awesome 5 Free';
   font-size: 32px;
@@ -124,7 +124,7 @@ h1 {
 button {
   background-color: white;
   font-size: 20px;
-  margin: 25px;
+  margin: 50px;
   cursor: pointer;
   border-radius: 10px;
   border-width: 1.5px;
