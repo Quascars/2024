@@ -124,11 +124,10 @@ h1 {
 button {
   background-color: white;
   font-size: 20px;
-  margin-left: 120px;
   cursor: pointer;
   border-radius: 10px;
   border-width: 1.5px;
-  padding: 5px;
+  padding-left: 120px;
 }
 
 button:hover {
