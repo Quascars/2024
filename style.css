@@ -127,8 +127,12 @@ button {
   cursor: pointer;
   border-radius: 10px;
   border-width: 1.5px;
-  margin-left: 120px !important;
+  margin-left: 120px;
 }
+
+.item button:first-child {
+    margin-left: 120px;
+  }
 
 button:hover {
   background-color: #e6e6e6;
