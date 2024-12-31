@@ -10,11 +10,11 @@
         <body>
             <main id="content">
                 <div class="header">
-                    <h1> Quascars 2024 V4 </h1>
+                    <h1> Quascars 2024 V4.1 </h1>
                 </div>
                 
                 <div class="heading" >
-                  <h1>Easiest to be misenturptreted:</h1>
+                  <h1>Easiest to be misinterpreted:</h1>
                 </div>
                 <div class="item">
                   <h2>
@@ -40,6 +40,10 @@
                   <button onclick="vote('Kingplazmer')">Kingplazmer</button>
                   <button onclick="vote('Muka')">Muka</button>
                   <button onclick="vote('Trizule')">Trizule</button>
+                  <button onclick="getMostVotedOption1()">Get Most Voted Option</button>
+                  <div id="mostVotedOptionDisplay1">
+                    <!-- The most voted option will be displayed here -->
+                  </div>
                 </div>
               
                 <div class="heading" >
@@ -194,6 +198,30 @@
                         console.error('Error reading votes:', error);
                     });
                 };
+
+                window.getMostVotedOption1 = function() {
+                        const votesRef = ref(database, 'votes');
+                        onValue(votesRef, (snapshot) => {
+                            const votes = snapshot.val();
+                            let mostVotedOption = '';
+                            let highestVoteCount = 0;
+            
+                            // Loop through the votes to find the most voted option
+                            for (let option in votes) {
+                                const count = votes[option].count || 0;
+                                if (count > highestVoteCount) {
+                                    mostVotedOption = option;
+                                    highestVoteCount = count;
+                                }
+                            }
+            
+                            // Display the most voted option
+                            const mostVotedOptionDisplay1 = document.getElementById('mostVotedOptionDisplay1');
+                            mostVotedOptionDisplay1.innerHTML = `Most Voted Option: ${mostVotedOption} with ${highestVoteCount} votes`;
+                        }, (error) => {
+                            console.error('Error reading votes:', error);
+                        });
+                    };
               </script>
           </main>
       </body>
