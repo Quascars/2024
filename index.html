@@ -10,7 +10,7 @@
         <body>
             <main id="content">
                 <div class="header">
-                    <h1> Quascars 2024 V4.33 </h1>
+                    <h1> Quascars 2024 V4.34 </h1>
                 </div>
                 
                 <div class="heading" >
@@ -40,7 +40,7 @@
                   <button onclick="vote('Kingplazmer')">Kingplazmer</button>
                   <button onclick="vote('Muka')">Muka</button>
                   <button onclick="vote('Trizule')">Trizule</button>
-                  <button onclick="getMostVotedOption1()">Get Most Voted Option</button>
+                  <button onclick="getMostVotedOption1()">Retrieve Winner</button>
                 </div>
                 <div class="item">
                   <h2>
@@ -221,7 +221,7 @@
             
                             // Display the most voted option
                             const mostVotedOptionDisplay1 = document.getElementById('mostVotedOptionDisplay1');
-                            mostVotedOptionDisplay1.innerHTML = `Most Voted Option: ${mostVotedOption} with ${highestVoteCount} votes`;
+                            mostVotedOptionDisplay1.innerHTML = `Winner is: ${mostVotedOption} with ${highestVoteCount} votes`;
                         }, (error) => {
                             console.error('Error reading votes:', error);
                         });
