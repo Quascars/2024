@@ -1,104 +1,152 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quascars</title>
-</head>
-<body>
-    <h1>Vote for Your Favorite Option V6</h1>
-    <button onclick="vote('Kingplazmer')">Kingplazmer</button>
-    <button onclick="vote('Crystaltanks')">Crystaltanks</button>
-    <button onclick="vote('Muka')">Muka</button>
-    <button onclick="vote('Grim')">Grim</button>
-    <button onclick="vote('Mapleleaf')">Mapleleaf</button>
-    <button onclick="vote('Trizule')">Trizule</button>
-    <button onclick="vote('Youngyos')">youngyos</button>
-    <button onclick="vote('Random Guy')">Random Guy</button>
-    <button onclick="getVotes()">Get Current Votes</button>
-    <button onclick="getMostVotedOption()">Get Most Voted Option</button>
+<html lang="en" dir="ltr">
+        <head>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" href="style.css">
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=0.5">
+            <title>Quascars</title>
+        </head>
 
-    <div id="voteDisplay">
-        <!-- The vote counts will be displayed here -->
-    </div>
-    <div id="mostVotedOptionDisplay">
-        <!-- The most voted option will be displayed here -->
-    </div>
-
-    <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js";
-        import { getDatabase, ref, set, update, increment, onValue } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-database.js";
-  
-        // Firebase configuration
-        const firebaseConfig = {
-          apiKey: "AIzaSyDwMFPvf5Hr3ASjcsii5bWpJNFBaRG0YQ0",
-          authDomain: "quascars-2024.firebaseapp.com",
-          projectId: "quascars-2024",
-          storageBucket: "quascars-2024.firebasestorage.app",
-          messagingSenderId: "497636253553",
-          appId: "1:497636253553:web:c0d26aed52c019e1ece0d0",
-          measurementId: "G-ES41X1FD3W"
-        };
-  
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-        const database = getDatabase(app);
-  
-        // Define the functions in the global scope
-        window.vote = function(option) {
-          const votesRef = ref(database, 'votes/' + option);
-          update(votesRef, { count: increment(1) }).then(() => {
-            console.log(`Vote registered for ${option}`);
-          }).catch(error => {
-            console.error('Error updating vote:', error);
-          });
-        };
-  
-        window.getVotes = function() {
-          const votesRef = ref(database, 'votes');
-          onValue(votesRef, (snapshot) => {
-            const votes = snapshot.val();
-            const voteDisplay = document.getElementById('voteDisplay');
+        <body>
+            <main id="content">
+                <div class="header">
+                    <h1> Quascars 2024 V2.5 </h1>
+                </div>
+                
+                <div class="heading" >
+                </div>
+          
+                <div class="stuff">
+                  <div class="item">
+                    <button onclick="vote('Kingplazmer')">Kingplazmer</button>
+                    <button onclick="vote('Crystaltanks')">Crystaltanks</button>
+                    <button onclick="vote('Muka')">Muka</button>
+                    <button onclick="vote('Grim')">Grim</button>
+                    <button onclick="vote('Mapleleaf')">Mapleleaf</button>
+                    <button onclick="vote('Trizule')">Trizule</button>
+                    <button onclick="vote('Youngyos')">youngyos</button>
+                    <button onclick="vote('Random Guy')">Random Guy</button>
+                    <button onclick="getVotes()">Get Current Votes</button>
+                    <button onclick="getMostVotedOption()">Get Most Voted Option</button>
+                    <button onclick="getMostVotedSpecificOptions(['Kingplazmer', 'Crystaltanks', 'Muka'])">Get Most Voted from Specific Options</button>
+                  </div>
+                  <div class="item">
+                    <h2>
+                        <div id="voteDisplay">
+                            <!-- The vote counts will be displayed here -->
+                        </div>
+                        <div id="mostVotedOptionDisplay">
+                            <!-- The most voted option will be displayed here -->
+                        </div>
+                    </h2>
+                  </div>
+                  <div class="item">
+                    <h2></h2>
+                  </div>
+                  <div class="item">
+                    <h2></h2>
+                  </div>
+                </div>
+                <script type="module">
+                    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js";
+                    import { getDatabase, ref, set, update, increment, onValue } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-database.js";
+              
+                    // Firebase configuration
+                    const firebaseConfig = {
+                      apiKey: "AIzaSyDwMFPvf5Hr3ASjcsii5bWpJNFBaRG0YQ0",
+                      authDomain: "quascars-2024.firebaseapp.com",
+                      projectId: "quascars-2024",
+                      storageBucket: "quascars-2024.firebasestorage.app",
+                      messagingSenderId: "497636253553",
+                      appId: "1:497636253553:web:c0d26aed52c019e1ece0d0",
+                      measurementId: "G-ES41X1FD3W"
+                    };
+              
+                    // Initialize Firebase
+                    const app = initializeApp(firebaseConfig);
+                    const database = getDatabase(app);
+              
+                    // Define the functions in the global scope
+                    window.vote = function(option) {
+                      const votesRef = ref(database, 'votes/' + option);
+                      update(votesRef, { count: increment(1) }).then(() => {
+                        console.log(`Vote registered for ${option}`);
+                      }).catch(error => {
+                        console.error('Error updating vote:', error);
+                      });
+                    };
+              
+                    window.getVotes = function() {
+                      const votesRef = ref(database, 'votes');
+                      onValue(votesRef, (snapshot) => {
+                        const votes = snapshot.val();
+                        const voteDisplay = document.getElementById('voteDisplay');
+                        
+                        // Clear the previous content
+                        voteDisplay.innerHTML = '';
+              
+                        // Display the vote counts dynamically
+                        for (let option in votes) {
+                          const count = votes[option].count || 0;
+                          voteDisplay.innerHTML += `<p>${option}: ${count} votes</p>`;
+                        }
+                      }, (error) => {
+                        console.error('Error reading votes:', error);
+                      });
+                    };
             
-            // Clear the previous content
-            voteDisplay.innerHTML = '';
-  
-            // Display the vote counts dynamically
-            for (let option in votes) {
-              const count = votes[option].count || 0;
-              voteDisplay.innerHTML += `<p>${option}: ${count} votes</p>`;
-            }
-          }, (error) => {
-            console.error('Error reading votes:', error);
-          });
-        };
+                    // Function to get the most voted option
+                    window.getMostVotedOption = function() {
+                        const votesRef = ref(database, 'votes');
+                        onValue(votesRef, (snapshot) => {
+                            const votes = snapshot.val();
+                            let mostVotedOption = '';
+                            let highestVoteCount = 0;
+            
+                            // Loop through the votes to find the most voted option
+                            for (let option in votes) {
+                                const count = votes[option].count || 0;
+                                if (count > highestVoteCount) {
+                                    mostVotedOption = option;
+                                    highestVoteCount = count;
+                                }
+                            }
+            
+                            // Display the most voted option
+                            const mostVotedOptionDisplay = document.getElementById('mostVotedOptionDisplay');
+                            mostVotedOptionDisplay.innerHTML = `Most Voted Option: ${mostVotedOption} with ${highestVoteCount} votes`;
+                        }, (error) => {
+                            console.error('Error reading votes:', error);
+                        });
+                    };
 
-        // Function to get the most voted option
-        window.getMostVotedOption = function() {
-            const votesRef = ref(database, 'votes');
-            onValue(votesRef, (snapshot) => {
-                const votes = snapshot.val();
-                let mostVotedOption = '';
-                let highestVoteCount = 0;
+                // Function to get the most voted option among specific options
+                window.getMostVotedSpecificOptions = function(specificOptions) {
+                    const votesRef = ref(database, 'votes');
+                    onValue(votesRef, (snapshot) => {
+                        const votes = snapshot.val();
+                        let mostVotedOption = '';
+                        let highestVoteCount = 0;
 
-                // Loop through the votes to find the most voted option
-                for (let option in votes) {
-                    const count = votes[option].count || 0;
-                    if (count > highestVoteCount) {
-                        mostVotedOption = option;
-                        highestVoteCount = count;
-                    }
-                }
+                        // Loop through the specific options to find the most voted
+                        specificOptions.forEach(option => {
+                            const count = votes[option]?.count || 0;
+                            if (count > highestVoteCount) {
+                                mostVotedOption = option;
+                                highestVoteCount = count;
+                            }
+                        });
 
-                // Display the most voted option
-                const mostVotedOptionDisplay = document.getElementById('mostVotedOptionDisplay');
-                mostVotedOptionDisplay.innerHTML = `Most Voted Option: ${mostVotedOption} with ${highestVoteCount} votes`;
-            }, (error) => {
-                console.error('Error reading votes:', error);
-            });
-        };
-    </script>
-</body>
+                        // Display the most voted option among the specific options
+                        const mostVotedOptionDisplay = document.getElementById('mostVotedOptionDisplay');
+                        mostVotedOptionDisplay.innerHTML = `Most Voted (Specific): ${mostVotedOption} with ${highestVoteCount} votes`;
+                    }, (error) => {
+                        console.error('Error reading votes:', error);
+                    });
+                };
+              </script>
+          </main>
+      </body>
 </html>
 
 
