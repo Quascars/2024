@@ -84,9 +84,9 @@ nav{
   list-style-type: none;
   background-color: rgb(101, 158, 205);
   overflow-x: hidden;
-	transition: 0.5s;
+  transition: 0.5s;
   padding-top: 60px;
-  }
+}
 
 .sidenav .closebtn {
   position: absolute;
@@ -108,7 +108,7 @@ main{
 }
 
 #content {
-  margin-left: 20%;
+  /*margin-left: 20%; */
   transition: 0.5s;
 }
 
