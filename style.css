@@ -131,7 +131,7 @@ button {
 }
 
 .item button:first-child {
-    margin-left: 120px;
+    margin-left: 100px;
   }
 
 button:hover {
