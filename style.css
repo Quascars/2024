@@ -211,15 +211,6 @@ input:disabled {
   padding: 0;
 }
 
-.heading img{
-  position: absolute;
-  top: 12.5%;
-  left: 0%;
-  width: 100%; 
-  z-index: -1; 
-  height: 250px;
-}
-
 .stuff {
   display: flex;
   flex-wrap: wrap;
