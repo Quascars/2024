@@ -194,7 +194,7 @@ input:disabled {
 .header {
   background-color: rgb(199, 211, 221);
   color: #fff;
-  padding: 20px;
+  padding-top: 20px;
   position: relative;
   border-bottom-right-radius: 50% 25%;
   border-bottom-left-radius: 50% 25%;
