@@ -196,8 +196,6 @@ input:disabled {
   color: #fff;
   padding-top: 20px;
   position: relative;
-  border-bottom-right-radius: 50% 25%;
-  border-bottom-left-radius: 50% 25%;
   overflow: hidden;
 }
 
