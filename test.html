@@ -10,7 +10,7 @@
         <body>
             <main id="content">
                 <div class="header">
-                    <h1> Quascars 2024 V2.3 </h1>
+                    <h1> Quascars 2024 V2.5 </h1>
                 </div>
                 
                 <div class="heading" >
@@ -28,6 +28,7 @@
                     <button onclick="vote('Random Guy')">Random Guy</button>
                     <button onclick="getVotes()">Get Current Votes</button>
                     <button onclick="getMostVotedOption()">Get Most Voted Option</button>
+                    <button onclick="getMostVotedSpecificOptions(['Kingplazmer', 'Crystaltanks', 'Muka'])">Get Most Voted from Specific Options</button>
                   </div>
                   <div class="item">
                     <h2>
@@ -36,7 +37,7 @@
                         </div>
                         <div id="mostVotedOptionDisplay">
                             <!-- The most voted option will be displayed here -->
-                        </div></h2>
+                        </div>
                     </h2>
                   </div>
                   <div class="item">
@@ -118,6 +119,31 @@
                             console.error('Error reading votes:', error);
                         });
                     };
+
+                // Function to get the most voted option among specific options
+                window.getMostVotedSpecificOptions = function(specificOptions) {
+                    const votesRef = ref(database, 'votes');
+                    onValue(votesRef, (snapshot) => {
+                        const votes = snapshot.val();
+                        let mostVotedOption = '';
+                        let highestVoteCount = 0;
+
+                        // Loop through the specific options to find the most voted
+                        specificOptions.forEach(option => {
+                            const count = votes[option]?.count || 0;
+                            if (count > highestVoteCount) {
+                                mostVotedOption = option;
+                                highestVoteCount = count;
+                            }
+                        });
+
+                        // Display the most voted option among the specific options
+                        const mostVotedOptionDisplay = document.getElementById('mostVotedOptionDisplay');
+                        mostVotedOptionDisplay.innerHTML = `Most Voted (Specific): ${mostVotedOption} with ${highestVoteCount} votes`;
+                    }, (error) => {
+                        console.error('Error reading votes:', error);
+                    });
+                };
                 </script>
             </main>
         </body>
