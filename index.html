@@ -10,7 +10,7 @@
         <body>
             <main id="content">
                 <div class="header">
-                    <h1> Quascars 2024 V3.5 </h1>
+                    <h1> Quascars 2024 V4 </h1>
                 </div>
                 
                 <div class="heading" >
@@ -18,7 +18,7 @@
                 </div>
                 <div class="item">
                   <h2>
-                    'guys i am getting the predator outfit' - muk
+                    'guys i am getting the predator outfit' - muka
                   </h2>
                 </div>
                 <div class="item">
@@ -33,8 +33,13 @@
                 </div>
                 <div class="item">
                   <h2>
-                    'i have 4 motherfuckers running down my throat' - tr
+                    'i have 4 motherfuckers running down my throat' - tri
                   </h2>
+                </div>
+                <div class="item">
+                  <button onclick="vote('Kingplazmer')">Kingplazmer</button>
+                  <button onclick="vote('Muka')">Muka</button>
+                  <button onclick="vote('Trizule')">Trizule</button>
                 </div>
               
                 <div class="heading" >
@@ -61,38 +66,36 @@
                   </h2>
                 </div>
           
-                <div class="stuff">
-                  <div class="item">
-                    <button onclick="vote('Kingplazmer')">Kingplazmer</button>
-                    <button onclick="vote('Crystaltanks')">Crystaltanks</button>
-                    <button onclick="vote('Muka')">Muka</button>
-                    <button onclick="vote('Grim')">Grim</button>
-                    <button onclick="vote('Mapleleaf')">Mapleleaf</button>
-                    <button onclick="vote('Trizule')">Trizule</button>
-                    <button onclick="vote('Youngyos')">youngyos</button>
-                    <button onclick="vote('Random Guy')">Random Guy</button>
-                    <button onclick="getVotes()">Get Current Votes</button>
-                    <button onclick="getMostVotedOption()">Get Most Voted Option</button>
-                    <button onclick="getMostVotedSpecificOptions(['Kingplazmer', 'Crystaltanks', 'Muka'])">Get Most Voted from Specific Options</button>
-                  </div>
-                  <div class="item">
-                    <h2>
-                        <div id="voteDisplay">
-                            <!-- The vote counts will be displayed here -->
-                        </div>
-                    </h2>  
-                    <h2>
-                        <div id="mostVotedOptionDisplay">
-                            <!-- The most voted option will be displayed here -->
-                        </div>
-                    </h2>
-                  </div>
-                  <div class="item">
-                    <h2></h2>
-                  </div>
-                  <div class="item">
-                    <h2></h2>
-                  </div>
+                <div class="item">
+                  <button onclick="vote('Kingplazmer')">Kingplazmer</button>
+                  <button onclick="vote('Crystaltanks')">Crystaltanks</button>
+                  <button onclick="vote('Muka')">Muka</button>
+                  <button onclick="vote('Grim')">Grim</button>
+                  <button onclick="vote('Mapleleaf')">Mapleleaf</button>
+                  <button onclick="vote('Trizule')">Trizule</button>
+                  <button onclick="vote('Youngyos')">youngyos</button>
+                  <button onclick="vote('Random Guy')">Random Guy</button>
+                  <button onclick="getVotes()">Get Current Votes</button>
+                  <button onclick="getMostVotedOption()">Get Most Voted Option</button>
+                  <button onclick="getMostVotedSpecificOptions(['Kingplazmer', 'Crystaltanks', 'Muka'])">Get Most Voted from Specific Options</button>
+                </div>
+                <div class="item">
+                  <h2>
+                      <div id="voteDisplay">
+                          <!-- The vote counts will be displayed here -->
+                      </div>
+                  </h2>  
+                  <h2>
+                      <div id="mostVotedOptionDisplay">
+                          <!-- The most voted option will be displayed here -->
+                      </div>
+                  </h2>
+                </div>
+                <div class="item">
+                  <h2></h2>
+                </div>
+                <div class="item">
+                  <h2></h2>
                 </div>
                 <script type="module">
                     import { initializeApp } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js";
