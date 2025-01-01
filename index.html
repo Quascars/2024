@@ -10,7 +10,7 @@
         <body>
             <main id="content">
                 <div class="header">
-                    <h1> Quascars 2024 V4.392 </h1>
+                    <h1> Quascars 2024 V4.4 </h1>
                 </div>
                 
                 <div class="heading" >
@@ -55,9 +55,47 @@
                     </div>
                   </h2>
                 </div>
+                
+                <div class="heading" >
+                  <h1>Best Historical Quote:</h1>
+                </div>
+                <div class="item">
+                  <h2>
+                    "Lord grant me chastity ... but not yet. " - st Agustine
+                  </h2>
+                </div>
+                <div class="item">
+                  <h2>
+                    "great gyatsbe" - Muka, before Ceaser
+                  </h2>
+                </div>
+                <div class="item">
+                  <h2>
+                    "yes, one day" - tri (this is the answer to if he would ever meet maple)
+                  </h2>
+                </div>
+                <div class="item">
+                  <h2>
+                    'you are fucking useless stupid monkey' - king 1840
+                  </h2>
+                </div>
+                <div class="item">
+                  <button onclick="vote('Kingplazmer')">Kingplazmer</button>
+                  <button onclick="vote('Muka')">Muka</button>
+                  <button onclick="vote('Trizule')">Trizule</button>
+                  <button onclick="vote('Random Guy')">Random Guy</button>
+                  <button onclick="getMostVotedOption2()">Retrieve Winner</button>
+                </div>
+                <div class="item">
+                  <h2>
+                    <div id="mostVotedOptionDisplay2">
+                      <!-- The most voted option will be displayed here -->
+                    </div>
+                  </h2>
+                </div>
               
                 <div class="heading" >
-                  <h1>Easiest to be misenturptreted 2:</h1>
+                  <h1>Test:</h1>
                 </div>
                 <div class="item">
                   <h2>
@@ -231,7 +269,31 @@
                         }, (error) => {
                             console.error('Error reading votes:', error);
                         });
-                    };
+                };
+
+                window.getMostVotedOption2 = function() {
+                        const votesRef = ref(database, 'votes');
+                        onValue(votesRef, (snapshot) => {
+                            const votes = snapshot.val();
+                            let mostVotedOption = '';
+                            let highestVoteCount = 0;
+            
+                            // Loop through the votes to find the most voted option
+                            for (let option in votes) {
+                                const count = votes[option].count || 0;
+                                if (count > highestVoteCount) {
+                                    mostVotedOption = option;
+                                    highestVoteCount = count;
+                                }
+                            }
+            
+                            // Display the most voted option
+                            const mostVotedOptionDisplay2 = document.getElementById('mostVotedOptionDisplay2');
+                            mostVotedOptionDisplay2.innerHTML = `Winner is: ${mostVotedOption} with ${highestVoteCount} votes`;
+                        }, (error) => {
+                            console.error('Error reading votes:', error);
+                        });
+                };
               </script>
           </main>
       </body>
