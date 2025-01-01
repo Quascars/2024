@@ -10,7 +10,7 @@
         <body>
             <main id="content">
                 <div class="header">
-                    <h1> Quascars 2024 V4.4 </h1>
+                    <h1> Quascars 2024 V4.41 </h1>
                 </div>
                 
                 <div class="heading" >
@@ -61,17 +61,17 @@
                 </div>
                 <div class="item">
                   <h2>
-                    "Lord grant me chastity ... but not yet. " - st Agustine
+                    'Lord grant me chastity ... but not yet.' - st Agustine
                   </h2>
                 </div>
                 <div class="item">
                   <h2>
-                    "great gyatsbe" - Muka, before Ceaser
+                    'great gyatsbe' - Muka, before Ceaser
                   </h2>
                 </div>
                 <div class="item">
                   <h2>
-                    "yes, one day" - tri (this is the answer to if he would ever meet maple)
+                    'yes, one day' - tri (this is the answer to if he would ever meet maple)
                   </h2>
                 </div>
                 <div class="item">
@@ -89,6 +89,44 @@
                 <div class="item">
                   <h2>
                     <div id="mostVotedOptionDisplay2">
+                      <!-- The most voted option will be displayed here -->
+                    </div>
+                  </h2>
+                </div>
+
+                <div class="heading" >
+                  <h1>Most likely to be cancelled:</h1>
+                </div>
+                <div class="item">
+                  <h2>
+                    'im going to dominate these kids' - crystal
+                  </h2>
+                </div>
+                <div class="item">
+                  <h2>
+                    'i just killed a native' - muka
+                  </h2>
+                </div>
+                <div class="item">
+                  <h2>
+                    'yer but he's hot so its fine' - Maple 
+                  </h2>
+                </div>
+                <div class="item">
+                  <h2>
+                    'Muka come with me, we're going to have some fun under the point' tri 2024
+                  </h2>
+                </div>
+                <div class="item">
+                  <button onclick="vote('Mapleleaf')">Mapleleaf</button>
+                  <button onclick="vote('Muka')">Muka</button>
+                  <button onclick="vote('Trizule')">Trizule</button>
+                  <button onclick="vote('Crystaltanks')">Crystaltanks</button>
+                  <button onclick="getMostVotedOption3()">Retrieve Winner</button>
+                </div>
+                <div class="item">
+                  <h2>
+                    <div id="mostVotedOptionDisplay3">
                       <!-- The most voted option will be displayed here -->
                     </div>
                   </h2>
@@ -290,6 +328,200 @@
                             // Display the most voted option
                             const mostVotedOptionDisplay2 = document.getElementById('mostVotedOptionDisplay2');
                             mostVotedOptionDisplay2.innerHTML = `Winner is: ${mostVotedOption} with ${highestVoteCount} votes`;
+                        }, (error) => {
+                            console.error('Error reading votes:', error);
+                        });
+                };
+
+                window.getMostVotedOption3 = function() {
+                        const votesRef = ref(database, 'votes');
+                        onValue(votesRef, (snapshot) => {
+                            const votes = snapshot.val();
+                            let mostVotedOption = '';
+                            let highestVoteCount = 0;
+            
+                            // Loop through the votes to find the most voted option
+                            for (let option in votes) {
+                                const count = votes[option].count || 0;
+                                if (count > highestVoteCount) {
+                                    mostVotedOption = option;
+                                    highestVoteCount = count;
+                                }
+                            }
+            
+                            // Display the most voted option
+                            const mostVotedOptionDisplay3 = document.getElementById('mostVotedOptionDisplay3');
+                            mostVotedOptionDisplay3.innerHTML = `Winner is: ${mostVotedOption} with ${highestVoteCount} votes`;
+                        }, (error) => {
+                            console.error('Error reading votes:', error);
+                        });
+                };
+
+                window.getMostVotedOption4 = function() {
+                        const votesRef = ref(database, 'votes');
+                        onValue(votesRef, (snapshot) => {
+                            const votes = snapshot.val();
+                            let mostVotedOption = '';
+                            let highestVoteCount = 0;
+            
+                            // Loop through the votes to find the most voted option
+                            for (let option in votes) {
+                                const count = votes[option].count || 0;
+                                if (count > highestVoteCount) {
+                                    mostVotedOption = option;
+                                    highestVoteCount = count;
+                                }
+                            }
+            
+                            // Display the most voted option
+                            const mostVotedOptionDisplay4 = document.getElementById('mostVotedOptionDisplay4');
+                            mostVotedOptionDisplay4.innerHTML = `Winner is: ${mostVotedOption} with ${highestVoteCount} votes`;
+                        }, (error) => {
+                            console.error('Error reading votes:', error);
+                        });
+                };
+
+                window.getMostVotedOption5 = function() {
+                        const votesRef = ref(database, 'votes');
+                        onValue(votesRef, (snapshot) => {
+                            const votes = snapshot.val();
+                            let mostVotedOption = '';
+                            let highestVoteCount = 0;
+            
+                            // Loop through the votes to find the most voted option
+                            for (let option in votes) {
+                                const count = votes[option].count || 0;
+                                if (count > highestVoteCount) {
+                                    mostVotedOption = option;
+                                    highestVoteCount = count;
+                                }
+                            }
+            
+                            // Display the most voted option
+                            const mostVotedOptionDisplay5 = document.getElementById('mostVotedOptionDisplay5');
+                            mostVotedOptionDisplay5.innerHTML = `Winner is: ${mostVotedOption} with ${highestVoteCount} votes`;
+                        }, (error) => {
+                            console.error('Error reading votes:', error);
+                        });
+                };
+
+
+                window.getMostVotedOption6 = function() {
+                        const votesRef = ref(database, 'votes');
+                        onValue(votesRef, (snapshot) => {
+                            const votes = snapshot.val();
+                            let mostVotedOption = '';
+                            let highestVoteCount = 0;
+            
+                            // Loop through the votes to find the most voted option
+                            for (let option in votes) {
+                                const count = votes[option].count || 0;
+                                if (count > highestVoteCount) {
+                                    mostVotedOption = option;
+                                    highestVoteCount = count;
+                                }
+                            }
+            
+                            // Display the most voted option
+                            const mostVotedOptionDisplay6 = document.getElementById('mostVotedOptionDisplay6');
+                            mostVotedOptionDisplay6.innerHTML = `Winner is: ${mostVotedOption} with ${highestVoteCount} votes`;
+                        }, (error) => {
+                            console.error('Error reading votes:', error);
+                        });
+                };
+
+                window.getMostVotedOption7 = function() {
+                        const votesRef = ref(database, 'votes');
+                        onValue(votesRef, (snapshot) => {
+                            const votes = snapshot.val();
+                            let mostVotedOption = '';
+                            let highestVoteCount = 0;
+            
+                            // Loop through the votes to find the most voted option
+                            for (let option in votes) {
+                                const count = votes[option].count || 0;
+                                if (count > highestVoteCount) {
+                                    mostVotedOption = option;
+                                    highestVoteCount = count;
+                                }
+                            }
+            
+                            // Display the most voted option
+                            const mostVotedOptionDisplay7 = document.getElementById('mostVotedOptionDisplay7');
+                            mostVotedOptionDisplay7.innerHTML = `Winner is: ${mostVotedOption} with ${highestVoteCount} votes`;
+                        }, (error) => {
+                            console.error('Error reading votes:', error);
+                        });
+                };
+
+
+                window.getMostVotedOption8 = function() {
+                        const votesRef = ref(database, 'votes');
+                        onValue(votesRef, (snapshot) => {
+                            const votes = snapshot.val();
+                            let mostVotedOption = '';
+                            let highestVoteCount = 0;
+            
+                            // Loop through the votes to find the most voted option
+                            for (let option in votes) {
+                                const count = votes[option].count || 0;
+                                if (count > highestVoteCount) {
+                                    mostVotedOption = option;
+                                    highestVoteCount = count;
+                                }
+                            }
+            
+                            // Display the most voted option
+                            const mostVotedOptionDisplay8 = document.getElementById('mostVotedOptionDisplay8');
+                            mostVotedOptionDisplay8.innerHTML = `Winner is: ${mostVotedOption} with ${highestVoteCount} votes`;
+                        }, (error) => {
+                            console.error('Error reading votes:', error);
+                        });
+                };
+
+                window.getMostVotedOption9 = function() {
+                        const votesRef = ref(database, 'votes');
+                        onValue(votesRef, (snapshot) => {
+                            const votes = snapshot.val();
+                            let mostVotedOption = '';
+                            let highestVoteCount = 0;
+            
+                            // Loop through the votes to find the most voted option
+                            for (let option in votes) {
+                                const count = votes[option].count || 0;
+                                if (count > highestVoteCount) {
+                                    mostVotedOption = option;
+                                    highestVoteCount = count;
+                                }
+                            }
+            
+                            // Display the most voted option
+                            const mostVotedOptionDisplay9 = document.getElementById('mostVotedOptionDisplay9');
+                            mostVotedOptionDisplay9.innerHTML = `Winner is: ${mostVotedOption} with ${highestVoteCount} votes`;
+                        }, (error) => {
+                            console.error('Error reading votes:', error);
+                        });
+                };
+
+                window.getMostVotedOption10 = function() {
+                        const votesRef = ref(database, 'votes');
+                        onValue(votesRef, (snapshot) => {
+                            const votes = snapshot.val();
+                            let mostVotedOption = '';
+                            let highestVoteCount = 0;
+            
+                            // Loop through the votes to find the most voted option
+                            for (let option in votes) {
+                                const count = votes[option].count || 0;
+                                if (count > highestVoteCount) {
+                                    mostVotedOption = option;
+                                    highestVoteCount = count;
+                                }
+                            }
+            
+                            // Display the most voted option
+                            const mostVotedOptionDisplay10 = document.getElementById('mostVotedOptionDisplay10');
+                            mostVotedOptionDisplay10.innerHTML = `Winner is: ${mostVotedOption} with ${highestVoteCount} votes`;
                         }, (error) => {
                             console.error('Error reading votes:', error);
                         });
