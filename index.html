@@ -10,7 +10,7 @@
         <body>
             <main id="content">
                 <div class="header">
-                    <h1> Quascars 2024 V4.5 </h1>
+                    <h1> Quascars 2024 V4.6 </h1>
                 </div>
                 
                 <div class="heading" >
@@ -137,7 +137,7 @@
                 </div>
                 <div class="item">
                   <h2>
-                    'I was playing sea of theives... on my knees' Tri - 2024
+                    'I was playing sea of theives... on my knees' - Tri 
                   </h2>
                 </div>
                 <div class="item">
@@ -409,6 +409,26 @@
                 <div class="item">
                   <h2>
                     <div id="mostVotedOptionDisplay">
+                      <!-- The most voted option will be displayed here -->
+                    </div>
+                  </h2>
+                </div>
+
+                <div class="header">
+                  <h1> Bonus Section: Guess who said it </h1>
+                </div>
+
+                <div class="item">
+                  <h2>
+                    'who is he trying to trap, the ghost of christmas past?'
+                  </h2>
+                </div>
+                <div class="item">
+                  <button onclick="getName1()">Retrieve Name</button>
+                </div>
+                <div class="item">
+                  <h2>
+                    <div id="Name1">
                       <!-- The most voted option will be displayed here -->
                     </div>
                   </h2>
@@ -753,6 +773,13 @@
                             console.error('Error reading votes:', error);
                         });
                 };
+
+                window.getName1 = function() {
+                  // Display the most voted option
+                  const Name1 = document.getElementById('Name1');
+                  Name1.innerHTML = `Crystaltanks`;
+                } 
+
               </script>
           </main>
       </body>
