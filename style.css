@@ -308,11 +308,10 @@ input:disabled {
 }
 
 footer {
-  background-color: rgb(91, 158, 206);
+  background-color: rgb(199, 211, 221);
   color: rgb(43, 43, 43); 
   text-align: center; 
   padding: 20px;        
-  position: fixed; 
   bottom: 0;             
   width: 100%;           
 }
